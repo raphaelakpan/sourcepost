@@ -20,7 +20,11 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
 end
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
