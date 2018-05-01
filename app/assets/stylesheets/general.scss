@@ -27,7 +27,7 @@
   height: 30px;
   background: var(--light-yellow);
   border-radius: 50%;
-  animation: rotate 2s ease infinite;
+  animation: rotate 1s linear infinite;
 }
 
 @keyframes rotate {
