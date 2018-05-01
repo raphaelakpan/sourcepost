@@ -1,7 +1,11 @@
-<% set_title("Home Page") %>
+<% set_title("Home") %>
 
-<h1> Home Page </h2>
+<section class="text-center home jumbotron">
+  <h1 class="header"> Welcome to the <span class="text-muted"> #sourcecode</span> App </h2>
 
-<p>
-  This is the home page
-</p>
+  <p class="sub-header">
+    This is the home page of the <span class="text-muted"> #sourcecode</span> Application
+  </p>
+
+  <%= link_to 'Sign Up Now!', signup_path, class: 'btn btn-success btn-lg' %>
+</section>
