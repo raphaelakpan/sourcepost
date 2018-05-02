@@ -8,8 +8,7 @@ RSpec.describe User, type: :model do
 
     describe 'name' do
       it 'accepts valid name' do
-        user.name = 'Jane Doe'
-        user.email = 'jane.doe@example.com'
+        user = build(:user)
 
         expect(user.valid?).to be true
       end
@@ -36,7 +35,7 @@ RSpec.describe User, type: :model do
 
     describe 'email' do
       it 'accepts valid email addresses' do
-        user.name = 'Jane Doe'
+        user = build(:user)
         valid_emails = %w[jane.doe@axample.com jane@bbc.com j432d@sample.com]
 
         valid_emails.each do |valid_email|
@@ -74,6 +73,34 @@ RSpec.describe User, type: :model do
 
         expect(duplicate_user.valid?).to be false
         expect(duplicate_user.errors[:email][0]).to eq('has already been taken')
+      end
+    end
+
+    describe 'password' do
+      it 'accepts valid password' do
+        user = build(:user)
+
+        expect(user.valid?).to be true
+      end
+
+      it 'validates that password is present' do
+        expect(user.valid?).to be false
+        expect(user.errors[:password][0]).to eq('can\'t be blank')
+      end
+
+      it 'must be at least 6 characters' do
+        user.password = 'abc'
+
+        expect(user.valid?).to be false
+        expect(user.errors[:password][0]).to eq('is too short (minimum is 6 characters)')
+      end
+
+      it 'validates that \'password\' matches \'confirm_password\'' do
+        user.password = 'abcdef'
+        user.password_confirmation = 'abc'
+
+        expect(user.valid?).to be false
+        expect(user.errors[:password_confirmation][0]).to eq('doesn\'t match Password')
       end
     end
   end

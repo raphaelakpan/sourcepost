@@ -9,6 +9,13 @@ class User < ApplicationRecord
             length: { maximum: 255 },
             format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
 
+  validates :password, presence: true,
+            length: { minimum: 6 }
+
+  validates :password_confirmation, presence: true
+
+  has_secure_password
+
   private
 
   def downcase_email
