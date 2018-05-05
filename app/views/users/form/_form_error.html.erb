@@ -1,0 +1,8 @@
+<% if errors.present? %>
+  <div class="invalid-feedback">
+    <% errors.each do |error_message| %>
+      <li> <%= "#{field} #{error_message}"%> </li>
+    <% end %>
+  </div>
+<% end %>
+

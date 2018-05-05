@@ -1,0 +1,21 @@
+<%= form_for(user) do |form| %>
+  <div class="form-group">
+    <%= form.text_field :name, class: "form-control #{user.errors[:name].present? ? 'is-invalid' : ''}", placeholder: "Enter your Name" %>
+    <%= render 'users/form/form_error', errors: user.errors[:name].uniq, field: 'Name' %>
+  </div>
+  <div class="form-group">
+    <%= form.email_field :email, class: "form-control #{user.errors[:email].present? ? 'is-invalid' : ''}", placeholder: "Enter your Email" %>
+    <%= render 'users/form/form_error', errors: user.errors[:email].uniq, field: 'Email' %>
+  </div>
+  <div class="form-group">
+    <%= form.password_field :password, class: "form-control #{user.errors[:password].present? ? 'is-invalid' : ''}", placeholder: "Enter your Password" %>
+    <%= render 'users/form/form_error', errors: user.errors[:password].uniq, field: 'Password' %>
+  </div>
+  <div class="form-group">
+    <%= form.password_field :password_confirmation, class: "form-control #{user.errors[:password_confirmation].present? ? 'is-invalid' : ''}", placeholder: "Re-Enter your Password" %>
+    <%= render 'users/form/form_error', errors: user.errors[:password_confirmation].uniq, field: 'Password Confirmation' %>
+  </div>
+  <div class="form-group">
+    <%= form.submit "Create my Account", class: 'btn btn-info btn-block btn-lg' %>
+  </div>
+<% end %>
