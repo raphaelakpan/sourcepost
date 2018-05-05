@@ -15,3 +15,5 @@ test:
 production:
   <<: *default
   database: sourcepost
+  username: sourcepost
+  password: <%= ENV['SOURCEPOST_DATABASE_PASSWORD'] %>
