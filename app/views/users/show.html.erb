@@ -1,0 +1,9 @@
+<% set_title(@user.name) %>
+
+<div class="row user-profile">
+  <div class="col-4">
+    <aside class="user-info">
+      <h2> <%= gravatar_for(@user) %> <%= @user.name %> </h2>
+    </aside>
+  </div>
+</div>
