@@ -6,12 +6,12 @@ default: &default
 
 development:
   <<: *default
-  database: sample_app_dev
+  database: sourcepost_dev
 
 test:
   <<: *default
-  database: sample_app_test
+  database: sourcepost_test
 
 production:
   <<: *default
-  database: sample_app
+  database: sourcepost

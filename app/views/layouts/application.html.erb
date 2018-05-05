@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> <%= "#{ content_for(:title) ? yield(:title) + ' - ' : ''}#sourcecode" %></title>
+    <title> <%= "#{ content_for(:title) ? yield(:title) + ' - ' : ''}#sourcepost" %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/favicons' %>
   </head>
 
   <body>
