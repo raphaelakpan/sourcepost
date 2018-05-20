@@ -7,5 +7,11 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
 
   resources :users, except: [:new]
-  get '/signup', to: 'users#new', as: 'signup'
+
+  get '/signup', to: 'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
+  match '*path', to: 'application#not_found', via: :all
 end
