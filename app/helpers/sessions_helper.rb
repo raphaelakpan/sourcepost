@@ -1,7 +1,7 @@
 module SessionsHelper
-  def log_in(user)
+  def log_in(user, remember: false)
     session[:user_id] = user.id
-    remember user
+    remember user if remember
   end
 
   def current_user

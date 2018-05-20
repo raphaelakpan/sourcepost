@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user&.authenticate(session_params[:password])
-      log_in @user
+      log_in @user, remember: session_params[:remember_me] == '1'
       flash[:success] = "Logged in successfully as #{@user.name}"
       redirect_to @user
     else
@@ -31,6 +31,6 @@ class SessionsController < ApplicationController
   end
 
   def session_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :remember_me)
   end
 end
