@@ -1,0 +1,36 @@
+class SessionsController < ApplicationController
+  before_action :find_user, only: [:create]
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    if @user.present? && @user.authenticate(session_params[:password])
+      log_in(@user)
+      flash[:success] = "Logged in successfully as #{@user.name}"
+      redirect_to @user
+    else
+      @user = User.new(session_params)
+      flash.now[:error] = 'Invalid Email/Password Combination'
+      render 'new'
+    end
+  end
+
+  def destroy
+    log_out
+    redirect_to root_path
+  end
+
+  private
+
+  def find_user
+    @user = User.find_by(
+      email: session_params[:email].downcase
+    )
+  end
+
+  def session_params
+    params.require(:user).permit(:email, :password)
+  end
+end
