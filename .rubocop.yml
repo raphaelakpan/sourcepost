@@ -1,0 +1,584 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  TargetRailsVersion: 4.2
+  Exclude:
+    - "**/db/**/*"
+    - "**/bin/*"
+    - "app/models/external_origin/namely.rb"
+    - "app/services/importing/us_cellular/constants.rb"
+    - "app/models/smart_groups/constants.rb"
+    - "app/models/smart_groups/operator_collection.rb"
+    - "app/services/algolia_search/constants.rb"
+
+Rails:
+  Enabled: true
+
+# Configuration parameters: AllowSafeAssignment.
+Lint/AssignmentInCondition:
+  Enabled: false
+
+# Configuration parameters: AlignWith, SupportedStyles.
+Lint/DefEndAlignment:
+  Enabled: false
+
+# Configuration parameters: AlignWith, SupportedStyles.
+Lint/EndAlignment:
+  Enabled: false
+
+Lint/HandleExceptions:
+  Enabled: false
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: false
+
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Lint/UselessAccessModifier:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 40
+  Severity: refactor
+
+Metrics/BlockLength:
+  Enabled: true
+  CountComments: false
+  Max: 25
+  Exclude:
+    - "Rakefile"
+    - "**/*.rake"
+    - "spec/**/*.rb"
+    - "/app/admin/*.rb"
+    - "app/conrollers/api/**/*.rb"
+    - config/routes.rb
+
+Metrics/BlockNesting:
+  Max: 3
+
+# Configuration parameters: CountComments.
+Metrics/ClassLength:
+  Max: 180
+  Severity: refactor
+  Exclude:
+    - app/services/learning_paths/conversion/convert_course_to_path.rb
+
+# Configuration parameters: CountComments.
+Metrics/ModuleLength:
+  Max: 180
+  Severity: refactor
+  Exclude:
+    - "spec/**/*.rb"
+
+Metrics/CyclomaticComplexity:
+  Max: 5
+  Severity: refactor
+
+# Configuration parameters: AllowURI, URISchemes.
+Metrics/LineLength:
+  Max: 242
+
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 20
+  Severity: refactor
+
+# Configuration parameters: CountKeywordArgs.
+Metrics/ParameterLists:
+  Enabled: false
+  Max: 6
+  Severity: refactor
+
+Metrics/PerceivedComplexity:
+  Max: 5
+  Severity: refactor
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle, SupportedLastArgumentHashStyles.
+Layout/AlignHash:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Layout/AlignParameters:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/BarePercentLiterals:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Layout/BlockEndNewline:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/BlockDelimiters:
+  Enabled: false
+
+Naming/ClassAndModuleCamelCase:
+  Exclude:
+    - app/serializers/api/**/*
+    - app/controllers/api/**/*
+    - app/models/api/**/*
+    - spec/models/api/**/*
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/ClassCheck:
+  Enabled: false
+
+Style/ClassVars:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/ColonMethodCall:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Layout/DotPosition:
+  Enabled: false
+
+Style/EachWithObject:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Layout/ElseAlignment:
+  Enabled: false
+
+Style/EmptyElse:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: AllowAdjacentOneLineDefs.
+Layout/EmptyLineBetweenDefs:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Layout/EmptyLines:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/EmptyMethod:
+  Enabled: false
+  EnforcedStyle: expanded
+  SupportedStyles:
+    - compact
+    - expanded
+
+Layout/EndOfLine:
+  Enabled: false
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/FormatString:
+  Enabled: false
+
+# Configuration parameters: AllowedVariables.
+Style/GlobalVars:
+  Enabled: false
+
+# Configuration parameters: MinBodyLength.
+Style/GuardClause:
+  Enabled: false
+
+# Configuration parameters: MaxLineLength.
+Style/IfUnlessModifier:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Layout/IndentHash:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: Width.
+Layout/IndentationWidth:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/Lambda:
+  Enabled: false
+
+Style/LambdaCall:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Layout/MultilineBlockLayout:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Layout/MultilineOperationIndentation:
+  Enabled: false
+
+# Configuration parameters: EnforcedStyle, MinBodyLength, SupportedStyles.
+Style/Next:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/NilComparison:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: AllowSafeAssignment.
+Style/ParenthesesAroundCondition:
+  Enabled: false
+
+# Configuration parameters: NamePrefix, NamePrefixBlacklist.
+Naming/PredicateName:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/Proc:
+  Enabled: false
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/RaiseArgs:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: AllowMultipleReturnValues.
+Style/RedundantReturn:
+  Enabled: false
+
+# Configuration parameters: MaxSlashes.
+Style/RegexpLiteral:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/SignalException:
+  Enabled: false
+
+# Configuration parameters: Methods.
+Style/SingleLineBlockParams:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: AllowIfMethodIsEmpty.
+Style/SingleLineMethods:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Layout/TrailingBlankLines:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Layout/TrailingWhitespace:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: ExactNameMatch, AllowPredicates, AllowDSLWriters, Whitelist.
+Style/TrivialAccessors:
+  Enabled: false
+
+Style/UnlessElse:
+  Enabled: false
+
+# Cop supports --auto-correct.
+Style/UnneededPercentQ:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: WordRegex.
+Style/WordArray:
+  MinSize: 4
+
+# Cop supports --auto-correct.
+Layout/ClosingParenthesisIndentation:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: AllowForAlignment.
+Layout/ExtraSpacing:
+  AllowForAlignment: true
+
+# Cop supports --auto-correct.
+# Configuration parameters: MultiSpaceAllowedForOperators.
+Layout/SpaceAroundOperators:
+  Exclude:
+    - "config/initializers/database_connection.rb"
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Rails/Date:
+  EnforcedStyle: flexible
+  Enabled: false
+
+Rails/Blank:
+  Enabled: false # We should enable this
+
+Rails/Present:
+  Enabled: false # We should enable this
+
+# Cop supports --auto-correct.
+# Configuration parameters: Include.
+Rails/ReadWriteAttribute:
+  Enabled: false
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Rails/TimeZone:
+  EnforcedStyle: flexible
+  Enabled: false
+
+# Configuration parameters: Include.
+Rails/Validation:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - production
+    - review
+    - demo
+    - demosource
+    - staging
+
+# We currently use `private` to designate private class methods, e.g.
+#
+# private
+#
+# def self.some_class_method
+#
+# `private` does not work like this, and what we're doing is wrong,
+# (we should instead be using `private_class_method`)
+Lint/IneffectiveAccessModifier:
+  Enabled: false
+
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: prefer_alias, prefer_alias_method
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+# * Holding off on this pending a decision on
+# * https://github.com/lessonly/lessonly.github.io/pull/37
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
+# SupportedStyles: aligned, indented
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+# Disables check for method name styling
+# Allows for support of Confident Ruby conversion methods
+# that start with capital letters
+# http://rubocop.readthedocs.io/en/latest/cops_style/#stylemethodname
+Naming/MethodName:
+  Enabled: false
+
+# Enforce case for variables ending in numbers
+# SupportedStyles: snake_case, normalcase, non_integer
+Naming/VariableNumber:
+  Enabled: false
+
+Lint/SafeNavigationChain:
+  Enabled: false # We should enable this
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: true
+  Exclude:
+    - "spec/**/*.rb" # RSpec syntax encourages this
+
+Lint/UriEscapeUnescape:
+  Enabled: false # We should enable this
+
+Lint/RescueWithoutErrorClass:
+  Enabled: false # We should enable this
+
+Lint/DuplicateMethods:
+  Enabled: true
+
+Lint/EmptyWhen:
+  Enabled: false # We should enable this
+
+Style/PercentLiteralDelimiters:
+  Enabled: false # We want to enable this, see PR #4292
+  PreferredDelimiters:
+    default: ()
+    '%i': '[]'
+    '%I': '[]'
+    '%r': '{}'
+    '%w': '[]'
+    '%W': '[]'
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Naming/HeredocDelimiterNaming:
+  Enabled: false # We should enable this
+
+Style/DateTime:
+  # We should enable this
+  # https://github.com/bbatsov/ruby-style-guide#no-datetime
+  Enabled: false
+
+Layout/MultilineMethodCallBraceLayout:
+  Enabled: false
+
+Layout/MultilineArrayBraceLayout:
+  Enabled: false
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: false # We should enable this
+
+Rails/DynamicFindBy:
+  Enabled: false # We should enable this
+
+Rails/FilePath:
+  Enabled: false
+
+Layout/EmptyLinesAroundExceptionHandlingKeywords:
+  Enabled: false
+
+Layout/SpaceInLambdaLiteral:
+  Enabled: false
+
+Layout/MultilineHashBraceLayout:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false # Just be careful
+
+Style/SafeNavigation:
+  Enabled: false # We should enable this
+
+Layout/IndentHeredoc:
+  Enabled: true
+
+Layout/SpaceAroundKeyword:
+  Enabled: true
+
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: true
+
+Layout/SpaceInsideArrayPercentLiteral:
+  Enabled: true
+
+Style/FormatStringToken:
+  Enabled: false
+
+Rails/OutputSafety:
+  Enabled: false # Just be careful
+
+Style/MethodMissing:
+  Enabled: false # We should enable this
+
+Layout/EmptyLinesAroundBeginBody:
+  Enabled: false
+
+Style/MultilineIfModifier:
+  Enabled: true
+
+Performance/HashEachMethods:
+  Enabled: false # We should enable this
+
+Performance/RegexpMatch:
+  Enabled: false # We should enable this
+
+Style/ZeroLengthPredicate:
+  Enabled: false
+
+Style/InverseMethods:
+  Enabled: false
+
+Style/CommentedKeyword:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Style/MixinUsage:
+  # Currently has false positives.
+  # See: https://github.com/bbatsov/rubocop/issues/4885
+  Enabled: false
+
+Style/TernaryParentheses:
+  Enabled: false # We should enable this
+
+Style/YodaCondition:
+  Enabled: false # We should enable this
+
+Rails/FindEach:
+  Enabled: false # We should enable this
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false # We should enable this
+
+Style/OrAssignment:
+  Enabled: false # We should enable this
+
+Layout/CaseIndentation:
+  Enabled: false # We should enable this
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Lint/ScriptPermission:
+  # Buggy: https://github.com/bbatsov/rubocop/issues/4526
+  Enabled: false
