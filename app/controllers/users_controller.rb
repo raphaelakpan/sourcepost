@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: :show
+  before_action :set_user, only: [:show, :edit, :update]
 
   def new
     @user = User.new
+  end
+
+  def edit
   end
 
   def create
@@ -19,6 +22,16 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
+
+  def update
+    if @user.update(user_params)
+      flash[:success] = "Your profile has been successfully updated!"
+      redirect_to @user
+    else
+      flash.now[:error] = "Form has one or more errors!"
+      render :edit
+    end
   end
 
   private
