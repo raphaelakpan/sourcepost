@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :require_login, only: [:edit, :update, :show]
+  before_action :require_login, only: [:edit, :update]
   before_action :is_current_user, only: [:edit, :update]
+
+  def index
+    @users = User.order(:created_at).paginate(paginate_params)
+  end
 
   def new
     @user = User.new
@@ -48,5 +52,12 @@ class UsersController < ApplicationController
 
   def is_current_user
     redirect_to edit_user_path(current_user) unless current_user? @user
+  end
+
+  def paginate_params
+    {
+      page: params[:page],
+      per_page: params[:size].to_i > 0 ? params[:size] : 10
+    }
   end
 end

@@ -1,0 +1,6 @@
+<a href="<%= user_path(user) %>">
+  <div class="d-flex m-3 align-items-center box-shadow border p-3">
+    <%= gravatar_for(user) %>
+    <h2 class="text-center ml-3"> <%= user.name %> </h2>
+  </div>
+</a>

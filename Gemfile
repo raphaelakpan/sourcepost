@@ -17,6 +17,9 @@ gem 'pg'
 gem 'bootstrap', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'bcrypt'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -26,7 +29,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
-  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do
