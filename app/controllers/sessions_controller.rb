@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if @user&.authenticate(session_params[:password])
       log_in @user, remember: session_params[:remember_me] == '1'
       flash[:success] = "Logged in successfully as #{@user.name}"
-      redirect_to @user
+      redirect_back_or_default(@user)
     else
       @user = User.new(session_params)
       flash.now[:error] = 'Invalid Email/Password Combination'
