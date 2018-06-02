@@ -8,17 +8,22 @@
     <%= render 'users/form/form_error', errors: user.errors[:email].uniq, field: 'Email' %>
   </div>
   <div class="form-group">
-    <%= form.password_field :password, class: "form-control #{user.errors[:password].present? ? 'is-invalid' : ''}", placeholder: "Enter your Password" %>
+    <% placeholder = params[:action] == "edit" ? "Enter your New Password" : "Enter your Password" %>
+    <%= form.password_field :password, class: "form-control #{user.errors[:password].present? ? 'is-invalid' : ''}", placeholder: placeholder %>
     <%= render 'users/form/form_error', errors: user.errors[:password].uniq, field: 'Password' %>
   </div>
   <div class="form-group">
-    <%= form.password_field :password_confirmation, class: "form-control #{user.errors[:password_confirmation].present? ? 'is-invalid' : ''}", placeholder: "Re-Enter your Password" %>
+    <% placeholder = params[:action] == "edit" ? "Re-enter your New Password" : "Re-Enter your Password" %>
+    <%= form.password_field :password_confirmation, class: "form-control #{user.errors[:password_confirmation].present? ? 'is-invalid' : ''}", placeholder: placeholder %>
     <%= render 'users/form/form_error', errors: user.errors[:password_confirmation].uniq, field: 'Password Confirmation' %>
   </div>
   <div class="form-group">
-    <%= form.submit "Create my Account", class: 'btn btn-info btn-block btn-lg' %>
+    <% action = params[:action] == "edit" ? "Save changes" : "Create my Account" %>
+    <%= form.submit action, class: 'btn btn-info btn-block btn-lg' %>
   </div>
-  <div class="form-group">
-    Already have an account? <%= link_to 'Login Here', login_path %> 🙂
-  </div>
+  <% unless params[:action] == "edit" %>
+    <div class="form-group">
+      Already have an account? <%= link_to 'Login Here', login_path %> 🙂
+    </div>
+  <% end %>
 <% end %>

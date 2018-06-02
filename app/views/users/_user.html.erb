@@ -1,0 +1,12 @@
+ <div class="user box-shadow border p-3 background-grey">
+    <%= gravatar_for(user) %>
+    <a href="<%= user_path(user) %>">
+      <h3> <%= user.name %> </h3>
+    </a>
+    <% if current_user.admin? && !current_user?(user) %>
+      <a href="<%= user_path(user) %>" class="delete" data-confirm="Are you sure?" data-method="delete">
+        <i class="fa fa-trash-alt"></i>
+      </a>
+    <% end %>
+  </div>
+
