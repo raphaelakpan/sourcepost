@@ -1,0 +1,13 @@
+.user {
+  display: grid;
+  grid-template-columns: 100px auto 40px;
+  align-items: center;
+  margin: 20px 0px;
+
+  .delete {
+    justify-self: center;
+    font-size: 120%;
+    color: var(--brand-red);
+    cursor: pointer;
+  }
+}

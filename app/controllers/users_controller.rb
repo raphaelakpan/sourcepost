@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
-  before_action :require_login, only: [:edit, :update]
+  before_action :require_login, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :is_current_user, only: [:edit, :update]
+  before_action :is_admin_user, only: [:destroy]
 
   def index
     @users = User.order(:created_at).paginate(paginate_params)
@@ -40,6 +41,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy!
+    flash[:success] = "#{@user.name} successfully deleted!"
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def set_user
@@ -59,5 +66,9 @@ class UsersController < ApplicationController
       page: params[:page],
       per_page: params[:size].to_i > 0 ? params[:size] : 10
     }
+  end
+
+  def is_admin_user
+    redirect_to(root_path) unless current_user.admin?
   end
 end

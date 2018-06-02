@@ -1,1 +1,6 @@
-<%= will_paginate(:renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+<div>
+  <div class="pagination_info">
+    <%= format_pagination_info(page_entries_info).html_safe %>
+  </div>
+  <%= will_paginate(:renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+</div>

@@ -1,5 +1,6 @@
 :root {
   --light-yellow: #f9f900;
+  --brand-red: #d00;
 }
 
 .footer {
@@ -43,6 +44,15 @@
 
 .box-shadow {
   box-shadow: 1px 1px 1px #ccc;
+}
+
+.background-grey {
+  background: #F7F7F7;
+}
+
+.pagination_info {
+  color: #666;
+  margin-bottom: 5px;
 }
 
 /* miscellaneous */
